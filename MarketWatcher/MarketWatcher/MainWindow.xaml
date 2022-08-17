@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarketWatcher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="850" Width="500">
+    <Grid x:Name="MainGridDaddy" ShowGridLines="True">
+        <Grid.Background>
+            <SolidColorBrush Color="BurlyWood" Opacity="0.1"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Name="label1" Margin="111,180,0,0" Background="Brown" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="0" Name="label2" Margin="174,342,0,0"  Background="AliceBlue" Grid.ColumnSpan="2"/>
+        <Button Name="button1" Content="Truc" Click="button1_Click" Grid.Row="1" Grid.Column="0" FontSize="16" FontFamily="Apple Chancery"/>
+        <TextBlock x:Name="PriceBox" Grid.Row="2" Grid.Column="1" Text="Bitcoin ToZeMoon" Background="#FF2C3333" Foreground="#FFA5C9CA" FontSize="22" FontFamily="Bodoni" />
 
     </Grid>
 </Window>

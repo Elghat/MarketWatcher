@@ -23,6 +23,23 @@ namespace MarketWatcher
         public MainWindow()
         {
             InitializeComponent();
+            //Pour la version finale il faudrait que je sauvegarde la position et la taille de la fenêtre quelque part pour la réassigner plus tard
+            this.Left = SystemParameters.PrimaryScreenWidth - this.Width + 7;
+            this.Top = SystemParameters.PrimaryScreenHeight - this.Height - 41;
+            
+
+
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            button1.Content = this.Top;
+        }
+        
     }
 }
