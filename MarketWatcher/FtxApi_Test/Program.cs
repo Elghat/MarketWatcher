@@ -64,6 +64,7 @@ namespace FtxApi_Test
             var r34 = api.RequestLeveragedTokenCreationAsync("HEDGE", 100).Result;
             var r35 = api.GetLeveragedTokenRedemptionListAsync().Result;
             var r36 = api.RequestLeveragedTokenRedemptionAsync("HEDGE", 100).Result;
+            
         }
 
         private static async Task WebSocketTests(FtxWebSocketApi wsApi, Client client)
