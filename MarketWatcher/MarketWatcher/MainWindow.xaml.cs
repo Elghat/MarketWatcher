@@ -49,29 +49,20 @@ namespace MarketWatcher
         {
             var client = new Client("SqJHbkedDgAysIzZvo28p9Fz5RsWsmBQcwak0Ez7", "b6WQLKnCeArpM9tdwrnsK_bxVUWrvqHNaY7CZNfk");
             var api = new FtxRestApi(client);
-            string requestResult = await TestWallah(api);
+            string requestResult = await TestWallah(api) ;
             button1.Content = requestResult;
             var priceBloc = (TextBlock)FindName("PriceBox");
             priceBloc.Text = requestResult;
-            // Folder, where a file is created.  
+            // Folder, where a file is created.
             // Make sure to change this folder to your own folder  
             string filePath = @"C:\Users\grego\Desktop\AccountInfoFTX.txt";
-            test = requestResult;
-            JsonDocument bidule = JsonDocument.Parse(requestResult);
-
+      
             // An array of strings  
             // Write array of strings to a file using WriteAllLines.  
             // If the file does not exists, it will create a new file.  
-            // This method automatically opens the file, writes to it, and closes file  
-            //File.WriteAllText(filePath, requestResult);
-            WriteTextToFile(filePath, bidule);
-            Console.WriteLine(bidule);
-        }
-
-        private void WriteTextToFile(string filePath, JsonDocument content)
-        {
-            File.WriteAllText(filePath, content.ToString());
-
+            // This method automatically opens the file, writes to it, and closes file
+            File.WriteAllText(filePath, requestResult);
+           
         }
 
         private static async Task<dynamic> TestWallah(FtxRestApi api)
